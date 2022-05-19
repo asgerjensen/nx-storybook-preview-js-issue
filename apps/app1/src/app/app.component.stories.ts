@@ -1,5 +1,4 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { NEW_TOKEN } from '@test/tokens';
 import { AppComponent } from './app.component';
 
 export default {
@@ -7,12 +6,13 @@ export default {
   component: AppComponent,
   decorators: [
     moduleMetadata({
+      /** 
       providers: [
         { 
           provide: NEW_TOKEN,
           useValue: 'bar'
         }
-      ],
+      ], */
       imports: [],
     })
   ],

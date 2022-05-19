@@ -1,0 +1,38 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/tokens/src",
+  "prefix": "test",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/tokens"],
+      "options": {
+        "project": "libs/tokens/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/tokens/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/tokens/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/tokens"],
+      "options": {
+        "jestConfig": "libs/tokens/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/tokens/**/*.ts", "libs/tokens/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
